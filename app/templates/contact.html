@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<body>
+    <h1>
+        Contact Form
+    </h1>
+
+    <h5>
+        Fill in this form to contact site owners
+    </h2>
+
+    <form method='GET' action="{{ url_for('submit') }}">
+        <div>{{form.name.label}}
+            {{form.name}}
+        </div>
+        <div>{{form.email.label}}
+            {{form.email}}
+        </div>
+        <div>{{form.subject.label}}
+            {{form.subject}}
+        </div>
+        <div>{{form.message.label}}
+            {{form.message}}
+        </div>
+        {{form.csrf_token}}
+    <button type='submit' value='sub' method='GET' name='submitButton'>Go</button>
+     </form>
+</body>
+
+{% endblock %}
